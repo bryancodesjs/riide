@@ -1,0 +1,472 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" (click)="reload()">
+          <img src="../../../assets/logo/logo-regular.webp" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="bookingForm()">Book a Ride</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">My Rides</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="about()">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="admin">Admin</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="ri-global-line --mr"></i>
+              <span id="langtext">{{currentLang}}</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" (click)="switchLang()">English</a></li>
+              <li><a class="dropdown-item" href="#" (click)="switchLang()">Español</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="animate__animated animate__fadeIn" *ngIf="!isbooking && !isabout">
+    <!-- header -->
+    <div id="main" class="container-fluid " >
+        <header class="">
+            <div class="container">
+                <div class="pt-5 pb-5 d-center">
+                    <h1 class="text-center --shadow"><strong>Go anywhere in the Dominican Republic</strong></h1>
+                    <h4 class="--shadow">Safe and reliable private transportation. Available 24/7</h4>
+                    <button class="btn btn-lg --bg-primary mt-3" (click)="bookingForm()">Book a Riide</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- feature section -->
+    <div class="container-fluid --bg-grey" >
+        <div class="container">
+            <section id="features" class="">
+                <div class="container p-5">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <h1><i class="ri-roadster-fill --primary"></i></h1>
+                                <h4>Door-to-Door Transportation</h4>
+                                <p>We take you anywhere you want in the DR</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <h1><i class="ri-flight-land-line --primary"></i></h1>
+                                <h4>Riide From and To all Airports</h4>
+                                <p>Timely express ride from and to all airports</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <h1><i class="ri-map-2-fill --primary"></i></h1>
+                                <h4>Visit Our Best Destinations</h4>
+                                <p>Enjoy the beaches, mountainviews and hotels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- features explained -->
+    <div class="container-fluid" >
+        <div id="featureexplained" class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="p-3 d-flex flex-column justify-content-center h-100">
+                        <p class="--text-muted"><strong>GO ANYWHERE</strong></p>
+                        <h2><strong>Door To Door Transportation</strong></h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3 d-center">
+                        <div class="img-wrap overflow-hidden rounded">
+                            <img src="../../../assets/features/door-to-door-riide-transportation.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="p-3 d-flex flex-column justify-content-center h-100">
+                        <p class="--text-muted"><strong>YOUR TRAVEL PARTNER</strong></p>
+                        <h2><strong>Riide From and To all Airports</strong></h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3 d-center">
+                        <div class="img-wrap overflow-hidden rounded">
+                            <img src="../../../assets/features/airport-pickup-riide-transportation.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="p-3 d-flex flex-column justify-content-center h-100">
+                        <p class="--text-muted"><strong>WE TAKE YOU THERE</strong></p>
+                        <h2><strong>Visit Our Best Destinations</strong></h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-3 d-center">
+                        <div class="img-wrap overflow-hidden rounded">
+                            <img src="../../../assets/features/travel-destinations-riide-transportation.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cta -->
+    <div class="container-fluid --bg-primary" >
+        <div class="container pt-5 pb-5 text-center">
+            <h1><strong>Travel Safe</strong>
+            </h1>
+            <h3>GPS-monitored fleet 24/7</h3>
+        </div>
+    </div>
+    <!-- fleet -->
+    <div class="container-fluid --bg--grey" >
+        <div class="container pt-5 pb-5">
+            <div class="">
+                <h1><strong>Riide Fleet</strong></h1>
+                <h3>Ride with Comfort</h3>
+            </div>
+            <div class="grid mt-5">
+                <div class="grid-item --bg-grey border" *ngFor="let i of cars">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <h4 class="mb-0 --upper"><strong>{{i.make}}</strong></h4>
+                                <small class="--cap">{{i.model}}</small>
+                            </div>
+                            <div class="col-lg-5">
+                                <small>From</small>
+                                <h4 class="--primary mb-0">${{i.price}}</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-12">
+                                <h5 class="mb-0 d-flex align-items-center mb-2"><i class="ri-user-3-fill --primary --mr"></i> {{i.seats}}</h5>
+                                <h5 class="mb-0 d-flex align-items-center"><i class="ri-luggage-cart-line --primary --mr"></i> <span>{{i.luggagelarge}} large</span><span>, {{i.luggagesmall}} small</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car--img">
+                        <img [src]="'../../../assets/cars/' + i.img + '.webp' " alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- rates-->
+    <div class="container-fluid">
+        <div class="container pt-5 pb-5">
+            <div class="">
+                <h1><strong>Service Rates</strong></h1>
+                <h3>Lorem ipsum dolor sit.</h3>
+            </div>
+            <section id="rates" class="mt-5">
+                <div class="row --bg-grey border rounded mb-3 p-3" *ngFor="let r of Rates"> <!-- ngfor here -->
+                    <div class="col-lg-4 col-sm-4 ">
+                        <label for="">FROM</label>
+                        <p>{{r.from}}</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 ">
+                        <label for="">TO</label>
+                        <p>{{r.to}}</p>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-3 col-6 mt-on-mobile">
+                        <label class="hide-on-mobile">EST. COST</label>
+                        <p class="price --primary">US${{r.basecost}}</p>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- book a ride -->
+<div class="container-fluid --bg--grey animate__animated animate__fadeIn" *ngIf="isbooking && !isabout">
+    <div class="container pt-5 pb-5">
+        <div class="">
+            <h5 class="text-muted mb-0">BOOKING</h5>
+            <h1><strong>BOOK A RIDE</strong></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="stepZero" class="row mb-3">
+                    <h3 class="mb-5 mt-5">Please choose a service</h3>
+                    <div class="col-lg-6 mb-3">
+                        <div class="service-card" id="airportcard" (click)="chooseAirport()">
+                            <h1><i class="ri-flight-land-line --primary"></i></h1>
+                            <h5>Airport Transportation</h5>
+                            <label for="" class="--text-muted">Ride from and to any airport in the DR</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <div class="service-card" id="privatecard" (click)="choosePrivate()">
+                            <h1><i class="ri-roadster-fill --primary"></i></h1>
+                            <h5>Private Transportation</h5>
+                            <label for="" class="--text-muted">Door-to-door transportation to and from all cities in the country</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12" *ngIf="airportservice || privateservice">
+                        <div class="d-flex justify-content-end mt-3 animate__animated animate__fadeIn quick">
+                            <button (click)="showStepOne()" class="btn btn-lg --bg-primary d-flex align-items-center">Date & Time <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="stepOne" class="d-none">
+                    <h3 class="mb-5 mt-5">When are you traveling?</h3>
+                    <div class="col-lg-6">
+                        <label for="">Trip Date</label>
+                        <input [(ngModel)]="currentBooking.date" type="date" class="form-control">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Pickup Time</label>
+                        <input [(ngModel)]="currentBooking.time" type="time" class="form-control">
+                    </div>
+                    <div class="col-lg-12" *ngIf="airportservice">
+                        <label for="">Flight Number</label>
+                        <!-- agregar numero de vuelo al objeto y modelo -->
+                        <input  [(ngModel)]="currentBooking.flightnumber" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="">Service Pickup Location</label>
+                        <input [(ngModel)]="currentBooking.from" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="">Destination</label>
+                        <input [(ngModel)]="currentBooking.destination" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-12">
+                        <a class="mt-3 mb-3" (click)="addSecondDestination()" *ngIf="!secondDestination && !isareturntrip">+ Add another destination</a>
+                    </div>
+                    <div class="col-lg-12 d-flex align-items-center mt-3">
+                        <input type="checkbox" class="form-check-input --mr" (click)="returnTrip()">
+                        <label class="form-check-label" for="">I will return to pickup location</label>
+                    </div>
+                    <div class="col-lg-12 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
+                        <label for="">Destination 2</label>
+                        <input [(ngModel)]="currentBooking.destinationTwo" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-6 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
+                        <label for="">Trip Date</label>
+                        <input [(ngModel)]="currentBooking.dateTwo"  type="date" class="form-control">
+                    </div>
+                    <div class="col-lg-6 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
+                        <label for="">Pickup Time</label>
+                        <input [(ngModel)]="currentBooking.timeTwo" type="time" class="form-control">
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between mt-3">
+                            <button (click)="showStepZero()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Service Type</button>
+                            <button (click)="showStepTwo()" class="btn btn-lg --bg-primary d-flex align-items-center">Passengers <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="stepTwo" class="row mb-3 d-none">
+                    <h3 class="mb-5 mt-5">How many passengers are you?</h3>
+                    <div class="col-lg-12">
+                        <label for="">Passengers</label>
+                        <input [(ngModel)]="currentBooking.passengers" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Large Luggage</label>
+                        <input [(ngModel)]="currentBooking.lgluggage" type="number" class="form-control">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Small Luggage</label>
+                        <input [(ngModel)]="currentBooking.smluggage" type="number" class="form-control">
+                    </div>
+                    <div class="col-lg-12 d-flex align-items-center mt-3">
+                        <input type="checkbox" class="form-check-input --mr" (click)="specificCar()">
+                        <label class="form-check-label" for="">I want an specific vehicle</label>
+                    </div>
+                    <div class="col-lg-12 mt-3 car-cards pb-3" *ngIf="wantsSpecificCar">
+                        <div class="car-mini-card border rounded --mr" *ngFor="let c of cars" (click)="preferedCar(c.model)">
+                            <h5 class="mb-0"><strong class="--cap">{{c.make}}</strong></h5>
+                            <label for="" class="--cap">{{c.model}}</label>
+                            <p class="mb-0"><i class="ri-user-3-fill --primary"></i> <span class="--mr">{{c.seats}} </span></p>
+                            <p><i class="ri-luggage-deposit-fill --primary"></i> <span>{{c.luggagelarge}} Large and </span> <span>{{c.luggagesmall}} small</span></p>
+                            <img [src]=" '../../../assets/cars/' + c.img + '.webp' " alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between mt-3">
+                            <button (click)="showStepOne()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Date</button>
+                            <button (click)="showStepThree()" class="btn btn-lg --bg-primary d-flex align-items-center">Contact Information <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="stepThree" class="row mb-3 d-none">
+                    <h3 class="mb-5 mt-5">Contact Information</h3>
+                    <div class="col-lg-12">
+                        <label for="">Your Full Name</label>
+                        <input [(ngModel)]="currentBooking.fullname" type="text" class="form-control">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Whatsapp / Phone Number</label>
+                        <input [(ngModel)]="currentBooking.phone" type="number" class="form-control">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Email</label>
+                        <input [(ngModel)]="currentBooking.email" type="email" class="form-control">
+                    </div>
+                    <div class="col-lg-12">
+                        <input (click)="addDetails()"  type="checkbox" class="form-check-input --mr">
+                        <label class="form-check-label" for="">Any additional details? </label>
+                    </div>
+                    <div class="col-lg-12" *ngIf="adddetails">
+                        <label for="" class="mt-3">Additional Details</label>
+                        <textarea [(ngModel)]="currentBooking.details" rows="4" class="form-control"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between mt-3">
+                            <button (click)="showStepTwo()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Passengers</button>
+                            <button (click)="review()" class="btn btn-lg --bg-primary d-flex align-items-center">Review <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="review" class="row mb-3 d-none">
+                    <h3 class="mb-5 mt-5">Review your reservation</h3>
+                    <div class="--bg-grey p-3 rounded border">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Customer</label>
+                                <h5><i class="ri-user-3-fill --primary --mr"></i>{{currentBooking.fullname}}</h5>
+                                <h5><i class="ri-phone-fill --primary --mr"></i>{{currentBooking.phone}}</h5>
+                                <h5><i class="ri-mail-line --primary --mr"></i>{{currentBooking.email}}</h5>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <label for="">Service Type</label>
+                                    <p *ngIf="currentBooking.type == '0' ">Airport Service</p>
+                                    <p *ngIf="currentBooking.type == '1' ">Private Service</p>
+                                </div>
+                                <div class="row" *ngIf="airportservice">
+                                    <label for="">Flight #</label>
+                                    <p>{{currentBooking.flightnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Pickup Location</label>
+                                <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.from}}</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Date</label>
+                                <p class="mb-0"><i class="ri-calendar-check-fill --primary --mr"></i>{{currentBooking.date}}</p>
+                                <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{currentBooking.time}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label for="">Destination</label>
+                                <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.destination}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Second Destination</label>
+                                <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.destinationTwo}}</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Date</label>
+                                <p class="mb-0"><i class="ri-calendar-check-fill --primary --mr"></i>{{currentBooking.dateTwo}}</p>
+                                <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{currentBooking.timeTwo}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Passengers</label>
+                                <p class="mb-0"><i class="ri-user-3-fill --primary --mr"></i>{{currentBooking.passengers}}</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="">Luggage</label>
+                                <p class="mb-0"><i class="ri-luggage-cart-line --primary --mr"></i>{{currentBooking.lgluggage}} Large</p>
+                                <p class="mb-0"><i class="ri-handbag-line --primary --mr"></i>{{currentBooking.smluggage}} Small</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="d-flex justify-content-between mt-3">
+                            <button (click)="showStepThree()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Contact</button>
+                            <button (click)="book()" class="btn btn-lg --bg-primary d-flex align-items-center">Submit <i class="ri-arrow-right-s-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="congratulations" class="row mb-3 mt-5 d-none">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="icon-wrap">
+                                <i class="ri-calendar-check-line"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <h5>Your reservation has been submitted!</h5>
+                            <p>A team member will reach out to you via email or phone to provide
+                                you with a copy of this reservation, the cost of the service and
+                                indications to proceed with your payment.
+                            </p>
+                            <p class="mt-3">You may now leave this page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- about us -->
+<div id="aboutus" class="container-fluid --bg-grey --flex animate__animated animate__fadeIn" *ngIf="!isbooking && isabout">
+    <div class="container">
+        <div class="row animate__animated animate__fadeInUp">
+            <div class="col-lg-6">
+                <div class="d-flex flex-column justify-content-center pt-5">
+                    <h4 class="text-muted">ABOUT RIIDE</h4>
+                    <h1><strong>Your most reliable travel partner</strong></h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center pt-5">
+                    <h3><strong>We wait for you, at no extra cost</strong></h3>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Repudiandae soluta animi vel placeat nulla. Lorem ipsum dolor 
+                        sit amet consectetur adipisicing elit. Labore obcaecati quaerat 
+                        deleniti soluta eaque debitis. Dolorum sit ab quos dicta?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<app-admin-nav *ngIf="authService.userData | async"></app-admin-nav>
+<div class="container-fluid animate__animated animate__fadeIn" *ngIf="authService.userData | async">
+    <div class="container">
+        <section class="pb-5 pt-5">
+            <h3>Dashboard</h3>
+            <div class="row">
+                <div class="col-lg-3 mb-3">
+                    <div class="p-3 --bg-grey border option rounded" routerLink="/reservations">
+                        <h2>{{pending}}</h2>
+                        <h5>Reservaciones</h5>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-3 mb-3">
+                    <div class="p-3 --bg-grey border option rounded">
+                        <h2>36</h2>
+                        <h5>Vehiculos</h5>
+                    </div>
+                </div> -->
+                <!-- <div class="col-lg-3 mb-3">
+                    <div class="p-3 --bg-grey border option rounded">
+                        <h2>36</h2>
+                        <h5>Conductores</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-3">
+                    <div class="p-3 --bg-grey border option rounded">
+                        <h2>10</h2>
+                        <h5>Tickets</h5>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </div>
+</div>
+<div class="container-fluid h-100 --bg-grey animate__animated animate__fadeIn quick" *ngIf="!(authService.userData | async)">
+    <!-- login view -->
+    <div class="container h-100 pt-5">
+        <div class="col-lg-4 offset-lg-4 pt-5 animate__animated animate__slideInUp quick">
+            <div class="logo-wrap">
+                <img src="../../../assets/logo/logo-regular.webp" alt="">
+            </div>
+            <h5>Admin Panel</h5>
+            <div class="form-group w-100">
+                <label for="">Correo</label>
+                <input type="text" class="form-control" [(ngModel)]="email">
+            </div>
+            <div class="form-group w-100">
+                <label for="">Contraseña</label>
+                <input type="password" class="form-control" [(ngModel)]="password">
+            </div>
+            <div class="d-flex mt-2 mb-2">
+                <button (click)="signIn()" class="btn --bg-primary btn-sm w-100" >Login</button>
+            </div>
+            <br>
+            <a class="d-flex align-items-center" routerLink="/"><i class="ri-arrow-left-s-line --mr"></i>Volver a riidetravel.com</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<app-admin-nav></app-admin-nav>
+<div class="container-fluid animate__animated animate__fadeIn --flex">
+    <div class="container">
+        <section class="pt-5 pb-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a routerLink="/admin">Admin</a></li>
+                  <li class="breadcrumb-item active --cap" aria-current="page">{{title}}</li>
+                </ol>
+            </nav>
+            <h3>Tarifas</h3>
+            <div class="row">
+                <div class="d-flex justify-content-end">
+                    <button (click)="toggleModal()" class="btn --bg-primary d-flex align-items-center">Agregar Tarifa <i class="ri-add-line"></i></button>
+                </div>
+            </div>
+        </section>
+        <section id="rates">
+            <div class="row --bg-grey border rounded mb-3 p-3" *ngFor="let r of Rates"> <!-- ngfor here -->
+                <div class="col-lg-3 col-sm-3 ">
+                    <label for="">DESDE</label>
+                    <p>{{r.from}}</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 ">
+                    <label for="">HACIA</label>
+                    <p>{{r.to}}</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6 mt-on-mobile">
+                    <label class="hide-on-mobile">COSTO</label>
+                    <p class="price --primary">US${{r.basecost}}</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-md-3 col-6 --btn-group mt-on-mobile">
+                    <button (click)="showEdit(r.key, r.from, r.to, r.basecost)" class="btn --action-btn --bg-darker-grey --mr"><i class="ri-file-edit-line"></i></button>
+                    <button (click)="showDelete(r.key, r.from, r.to, r.basecost)" class="btn --action-btn --bg-darker-grey"><i class="ri-delete-bin-2-line"></i></button>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+<!-- Modal para agregar nueva tarifa-->
+<div class="modal fade" id="tarifaModal" tabindex="-1" aria-labelledby="tarifaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" *ngIf="userIsAdding">Agregar Tarifa</h5>
+          <h5 class="modal-title" *ngIf="userIsEditing">Modificar Tarifa</h5>
+          <h5 class="modal-title" *ngIf="userIsDeleting">Eliminar</h5>
+          <button (click)="toggleModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngIf="userIsAdding || userIsEditing">
+            <div div class="form-group mb-3">
+              <label for="">Origen</label>
+              <input [(ngModel)]="newRate.from" type="text" placeholder="Origen" class="form-control" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="">Destino</label>
+                <input [(ngModel)]="newRate.to" type="text" placeholder="Destino" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="">Costo (US)</label>
+                <input [(ngModel)]="newRate.basecost" type="number" placeholder="0.00" class="form-control" required>
+            </div>
+        </div>
+        <div class="modal-body" *ngIf="userIsDeleting">
+            <h5 class="text-danger">Estas a punto de eliminar esta tarifa</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleModal()">Cancelar</button>
+          <button *ngIf="userIsAdding" type="button" class="btn --bg-primary" (click)="saveNew()">Guardar</button>
+          <button *ngIf="userIsEditing" type="button" class="btn --bg-primary" (click)="update()">Actualizar</button>
+          <button *ngIf="userIsDeleting" type="button" class="btn btn-danger" (click)="deleteThis()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>

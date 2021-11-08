@@ -1,0 +1,98 @@
+Date : 2021-11-07 23:16:49
+Directory : c:\Users\PC\Documents\GitHub\riide\src
+Total : 56 files,  1775 codes, 177 comments, 186 blanks, all 2138 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| TypeScript |         33 |        826 |        106 |        164 |      1,096 |
+| HTML       |         11 |        606 |         67 |         12 |        685 |
+| SCSS       |         11 |        285 |          4 |          6 |        295 |
+| JSON       |          1 |         58 |          0 |          4 |         62 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                              | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                 |         56 |      1,775 |        177 |        186 |      2,138 |
+| app                                                                                               |         48 |      1,534 |        101 |        158 |      1,793 |
+| app\about                                                                                         |          4 |         32 |          0 |         13 |         45 |
+| app\admin-nav                                                                                     |          4 |         69 |          0 |         11 |         80 |
+| app\components                                                                                    |         28 |      1,219 |        100 |         91 |      1,410 |
+| app\components\admin                                                                              |          4 |        125 |         21 |         13 |        159 |
+| app\components\contact                                                                            |          4 |         32 |          0 |         13 |         45 |
+| app\components\footer                                                                             |          4 |         32 |          0 |         13 |         45 |
+| app\components\home                                                                               |          4 |        803 |         41 |         18 |        862 |
+| app\components\inventory                                                                          |          4 |         32 |          0 |         13 |         45 |
+| app\components\navbar                                                                             |          4 |         42 |         37 |         11 |         90 |
+| app\components\reservations                                                                       |          4 |        153 |          1 |         10 |        164 |
+| app\models                                                                                        |          2 |         30 |          0 |          3 |         33 |
+| app\services                                                                                      |          4 |         83 |          0 |         25 |        108 |
+| assets                                                                                            |          1 |         58 |          0 |          4 |         62 |
+| environments                                                                                      |          2 |         22 |         11 |          4 |         37 |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                          | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\PC\Documents\GitHub\riide\src\app\about\about.component.html                             | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\about\about.component.scss                             | SCSS       |          0 |          0 |          1 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\about\about.component.spec.ts                          | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\about\about.component.ts                               | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\admin-nav\admin-nav.component.html                     | HTML       |         23 |          0 |          0 |         23 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\admin-nav\admin-nav.component.scss                     | SCSS       |         11 |          0 |          0 |         11 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\admin-nav\admin-nav.component.spec.ts                  | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\admin-nav\admin-nav.component.ts                       | TypeScript |         15 |          0 |          5 |         20 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app-routing.module.ts                                  | TypeScript |         17 |          0 |          3 |         20 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app.component.html                                     | HTML       |          1 |          0 |          0 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app.component.scss                                     | SCSS       |          0 |          0 |          1 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app.component.spec.ts                                  | TypeScript |         31 |          0 |          5 |         36 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app.component.ts                                       | TypeScript |          9 |          0 |          2 |         11 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\app.module.ts                                          | TypeScript |         43 |          1 |          4 |         48 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\admin\admin.component.html                  | HTML       |         39 |         19 |          0 |         58 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\admin\admin.component.scss                  | SCSS       |         23 |          0 |          0 |         23 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\admin\admin.component.spec.ts               | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\admin\admin.component.ts                    | TypeScript |         43 |          2 |          7 |         52 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\contact\contact.component.html              | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\contact\contact.component.scss              | SCSS       |          0 |          0 |          1 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\contact\contact.component.spec.ts           | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\contact\contact.component.ts                | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\footer\footer.component.html                | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\footer\footer.component.scss                | SCSS       |          0 |          0 |          1 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\footer\footer.component.spec.ts             | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\footer\footer.component.ts                  | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\home\home.component.html                    | HTML       |        429 |         11 |          6 |        446 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\home\home.component.scss                    | SCSS       |        119 |          0 |          0 |        119 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\home\home.component.spec.ts                 | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\home\home.component.ts                      | TypeScript |        235 |         30 |          6 |        271 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\inventory\inventory.component.html          | HTML       |          1 |          0 |          1 |          2 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\inventory\inventory.component.scss          | SCSS       |          0 |          0 |          1 |          1 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\inventory\inventory.component.spec.ts       | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\inventory\inventory.component.ts            | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\navbar\navbar.component.html                | HTML       |          0 |         37 |          0 |         37 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\navbar\navbar.component.scss                | SCSS       |         11 |          0 |          0 |         11 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\navbar\navbar.component.spec.ts             | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\navbar\navbar.component.ts                  | TypeScript |         11 |          0 |          5 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\reservations\reservations.component.html    | HTML       |         96 |          0 |          0 |         96 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\reservations\reservations.component.scss    | SCSS       |          3 |          0 |          0 |          3 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\reservations\reservations.component.spec.ts | TypeScript |         20 |          0 |          6 |         26 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\components\reservations\reservations.component.ts      | TypeScript |         34 |          1 |          4 |         39 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\models\reservation.model.spec.ts                       | TypeScript |          6 |          0 |          2 |          8 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\models\reservation.model.ts                            | TypeScript |         24 |          0 |          1 |         25 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\services\authentication.service.spec.ts                | TypeScript |         12 |          0 |          5 |         17 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\services\authentication.service.ts                     | TypeScript |         33 |          0 |          5 |         38 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\services\reservation.service.spec.ts                   | TypeScript |         12 |          0 |          5 |         17 |
+| c:\Users\PC\Documents\GitHub\riide\src\app\services\reservation.service.ts                        | TypeScript |         26 |          0 |         10 |         36 |
+| c:\Users\PC\Documents\GitHub\riide\src\assets\lang.json                                           | JSON       |         58 |          0 |          4 |         62 |
+| c:\Users\PC\Documents\GitHub\riide\src\environments\environment.prod.ts                           | TypeScript |         11 |          0 |          1 |         12 |
+| c:\Users\PC\Documents\GitHub\riide\src\environments\environment.ts                                | TypeScript |         11 |         11 |          3 |         25 |
+| c:\Users\PC\Documents\GitHub\riide\src\index.html                                                 | HTML       |         14 |          0 |          2 |         16 |
+| c:\Users\PC\Documents\GitHub\riide\src\main.ts                                                    | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\PC\Documents\GitHub\riide\src\polyfills.ts                                               | TypeScript |          1 |         57 |          8 |         66 |
+| c:\Users\PC\Documents\GitHub\riide\src\styles.scss                                                | SCSS       |        118 |          4 |          1 |        123 |
+| c:\Users\PC\Documents\GitHub\riide\src\test.ts                                                    | TypeScript |         19 |          4 |          5 |         28 |
+| Total                                                                                             |            |      1,775 |        177 |        186 |      2,138 |
++---------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

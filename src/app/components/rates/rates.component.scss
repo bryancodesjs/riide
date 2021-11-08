@@ -1,0 +1,27 @@
+#rates {
+    p {
+        margin-bottom: 0 !important;
+        font-weight: 500;
+    }
+    .--btn-group {
+        display: flex;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 575px) {
+    .--btn-group {
+        justify-content: end;
+    }
+    .mt-on-mobile {
+        margin-top: 2rem;
+    }
+    p.price{
+        font-size: 31.25px !important;
+    }
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+#tarifaModal {
+    background-color: #000000b5 !important;
+}

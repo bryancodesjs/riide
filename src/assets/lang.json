@@ -1,0 +1,61 @@
+{
+    "eng": [
+    {
+        "nav-menu-1" : "book a ride",
+        "nav-menu-2" : "about us",
+        "nav-menu-3" : "contact",
+        "header-title" : "go anywhere in the dominican republic",
+        "header-subtitle" : "safe and reliable transportation. available 24/7",
+        "header-button-text" : "Book a Ride",
+        "feature-1-tag" : "go anywhere",
+        "feature-1-title" : "Door-to-Door Transportation",
+        "feature-1-text" : "We take you anywhere you want in the DR",
+        "feature-1-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "feature-2-tag" : "your travel partner",
+        "feature-2-title" : "Riide From and To all Airports",
+        "feature-2-text" : "Timely express ride from and to all airports",
+        "feature-2-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "feature-3-tag" : "we take you there",
+        "feature-3-title" : "Visit Our Best Destinations",
+        "feature-3-text" : "Enjoy the beaches, mountainviews and hotels",
+        "feature-3-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "gps-title" : "travel safe",
+        "gps-sub" : "GPS-monitored fleet 24/7",
+        "fleet-title":"Riide Fleet",
+        "fleet-sub":"Ride with comfort",
+        "large":"large",
+        "small":"small",
+        "from":"from"
+    }],
+    "esp": [
+    {
+        "nav-menu-1" : "Reservar un Viaje",
+        "nav-menu-2" : "Nosotros",
+        "nav-menu-3" : "Contacto",
+        "header-title" : "Ve a cualquier lugar en la Republica Dominicana",
+        "header-subtitle" : "Transporte seguro y confiable 24/7",
+        "header-button-text" : "Reservar un Viaje",
+        "feature-1-tag" : "Ve a Cualquier Parte",
+        "feature-1-title" : "Transporte Puerta a Puerta",
+        "feature-1-text" : "Te llevamos a cualquier parte de RD",
+        "feature-1-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "feature-2-tag" : "Tu compañero de viaje",
+        "feature-2-title" : "Transporte desde y hacia todos los aeropuertos",
+        "feature-2-text" : "Transporte expreso y puntual desde y hacia cualquier aeropuerto",
+        "feature-2-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "feature-3-tag" : "Nosotros te llevamos",
+        "feature-3-title" : "Visita los destinos mas hermosos de la isla",
+        "feature-3-text" : "Disfruta de las mejores playas, montañas y hoteles del pais",
+        "feature-3-para" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+        "gps-title" : "Viaja seguro",
+        "gps-sub" : "Flotilla monitoreada por GPS 24/7",
+        "fleet-title":"Nuestros Vehiculos",
+        "fleet-sub":"Viaja confortable",
+        "large":"Gde.",
+        "small":"Peq.",
+        "from":"Desde"
+    }]
+}
+
+
+

@@ -1,0 +1,96 @@
+<app-admin-nav *ngIf="authService.userData | async"></app-admin-nav>
+<div class="container-fluid --flex animate__animated animate__fadeIn" *ngIf="authService.userData | async">
+    <div class="container pt-5 pb-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/admin">Admin</a></li>
+              <li class="breadcrumb-item active --cap" aria-current="page">{{title}}</li>
+            </ol>
+          </nav>
+        <div>
+            <h3><span>{{pending}}</span> Reservaciones</h3>
+        </div>
+        <hr>
+        <div>
+            <ul>
+                <li *ngFor="let r of reservations" class="mt-3 --bg-grey border">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="p-3">
+                                <label for="">Codigo:</label>
+                                <h4>{{r.code}}</h4>
+                                <label for="">Reservante</label>
+                                <h4 class=" --upper">{{r.fullname}}</h4>
+                                <p class="mb-0"><i class="ri-phone-fill --primary"></i> {{r.phone}}</p>
+                                <p class="mb-0"><i class="ri-mail-line --primary"></i> {{r.email}}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="p-3">
+                                <label for="">Ocupantes</label>
+                                <p class="mb-0"><i class="ri-user-3-fill --primary --mr"></i>{{r.passengers}} Pasajeros</p>
+                                <p class="mb-0"><i class="ri-luggage-cart-line --primary --mr"></i>{{r.lgluggage}} Maletas Gde.</p>
+                                <p class="mb-0"><i class="ri-shopping-bag-fill --primary --mr"></i>{{r.smluggage}} Maletas Peq.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-3">
+                                <div class="row">
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <label for="">Recogida:</label>
+                                        <p class="mb-3"><i class="ri-map-pin-line --primary --mr"></i>{{r.from}}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <label for="">Dia y Hora:</label>
+                                        <p class="mb-0" for=""><i class="ri-calendar-check-fill --primary --mr"></i>{{r.date}}</p>
+                                        <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{r.time}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label for="">Destino:</label>
+                                        <p class="mb-0"><i class="ri-map-pin-line --primary --mr"></i>{{r.destination}}</p>
+                                    </div>
+                                </div>
+                                <hr *ngIf="r.destinationTwo != '' ">
+                                <div class="row" *ngIf="r.destinationTwo != '' ">
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <label for="">Destino 2:</label>
+                                        <p class="mb-0"><i class="ri-map-pin-line --primary --mr"></i>{{r.destinationTwo}}</p>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <label for="">Dia y Hora:</label>
+                                        <p class="mb-0" for=""><i class="ri-calendar-check-fill --primary --mr"></i>{{r.dateTwo}}</p>
+                                        <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{r.timeTwo}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="p-3">
+                                <label>Monto:</label>
+                                <h5><strong>US$0</strong></h5>
+                                <span class="badge --bg-danger" *ngIf="r.status == '0' ">Cancelado</span>
+                                <span class="badge --bg-warning" *ngIf="r.status == '1' ">Pendiente</span>
+                                <span class="badge --bg-success" *ngIf="r.status == '2' ">Completado</span>
+                            </div>
+                            <div class="p-3">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label>Vehiculo:</label>
+                                        <h4>{{r.car}}</h4>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="">Conductor:</label>
+                                        <p>N/A</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
