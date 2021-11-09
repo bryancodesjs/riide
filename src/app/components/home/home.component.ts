@@ -21,14 +21,32 @@ export class HomeComponent implements OnInit {
   wantsSpecificCar = false;
   isareturntrip = false;
   latestID = 0;
+
+  //booking error variables
+  //STEP 1 errors
+  dateerror = false;
+  timeerror = false;
+  fromerror = false;
+  destinationerror = false;
+  //STEP 2 errors
+  passengerserror = false;
+  lgluggageerror = false;
+  smluggageerror = false;
+  //STEP 3 errors
+  fullnameerror = false;
+  phoneerror = false;
+  emailerror = false;
+
+
   //language variables
   english = true;
   spanish = false;
-  currentLang = 'english';
   //languageObject
   currentlang: any = {};
   //idioma ingles
-  langEng = {
+  lang = 
+    {
+    name: 'English',
     nav1: 'Book a Ride',
     nav2 : "About Us",
     nav3 : "Contact",
@@ -53,9 +71,61 @@ export class HomeComponent implements OnInit {
     fleetsub:"Ride with Comfort",
     large:"large",
     small:"small",
-    from:"from"
+    from:"from",
+    to: 'To',
+    ratesTitle: 'Service Rates',
+    ratesSub: 'Lorem ipsum dolor sit.',
+    estcost: 'Est. Cost.'
   }
 
+  langEs = 
+    {
+    name: "Español",
+    nav1: 'Reserva',
+    nav2 : "Nosotros",
+    nav3 : "Contacto",
+    headertitle: "Ve a cualquier parte en Republica Dominicana",
+    headersubtitle : "Transporte puntual y seguro las 24 horas",
+    headerbuttontext : "Reservar un Servicio",
+    featureOnetag : "Ve a cualquier lado",
+    featureOnetitle : "Transporte Puerta a Puerta",
+    featureOnetext: "Te llevamos a cualquier punto de la isla",
+    featureOnepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+    featureTwotag : "Tu compañero de viajes",
+    featureTwotitle : "Transporte desde y hacia todos los aeropuertos",
+    featureTwotext : "Llegamos a tiempo y esperamos por ti en y hacia todos los aeropuertos",
+    featureTwopara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+    featureThreetag : "Conoce",
+    featureThreetitle : "Visita los mejores destinos",
+    featureThreetext : "Disfruta de nuestras mejores playas, vistas y hoteles",
+    featureThreepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
+    gpstitle : "Viaja Seguro",
+    gpssub : "Flotilla Monitoreada por GPS 24/7",
+    fleettitle:"Nuestra Florilla",
+    fleetsub:"Viaja Confortable",
+    large:"Gde.",
+    small:"Peq.",
+    from:"Desde",
+    to:"Hacia",
+    ratesTitle: 'Tarifas de Servicio',
+    ratesSub: 'Lorem ipsum dolor sit.',
+    estcost: 'Costo Aprox.'
+  }
+
+  translate(){
+    if(this.english) {
+      this.english = false;
+      this.spanish = true;
+      this.currentlang = this.langEs;
+      
+    } else {
+      this.spanish = false;
+      this.english = true;
+      this.currentlang = this.lang;
+    }
+    // this.currentlang = this.lang;
+    // console.log(this.currentlang);
+  }
   //revervacion almacenada en memoria enlazada al formulario
   currentBooking: Reservation = {
     type: '',
@@ -130,6 +200,11 @@ export class HomeComponent implements OnInit {
   constructor(private _bookingservice: ReservationService, private _ratesService: RatesService) { }
 
   ngOnInit(): void {
+    this.translate();
+    this.retrieveAllRecords();
+    this.retrieveAllRates();
+  }
+  retrieveAllRecords() {
     //retrieves all records from firebase
     this._bookingservice.getAll().snapshotChanges().pipe(
       map(a =>
@@ -140,7 +215,8 @@ export class HomeComponent implements OnInit {
     ).subscribe(data => {
       this.latestID = data.length; 
     });
-
+  }
+  retrieveAllRates() {
     //retrieves all rates
     this._ratesService.getAll().snapshotChanges().pipe(
       map(changes =>
@@ -236,30 +312,108 @@ export class HomeComponent implements OnInit {
     (document.getElementById('stepThree') as HTMLElement).className = "d-none";
     (document.getElementById('congratulations') as HTMLElement).className = "d-none";
   }
+  //this function resets all error messages in the reservation form
+  resetErrors() {
+    //errors step 1
+    this.timeerror = false;
+    this.dateerror = false;
+    this.destinationerror = false;
+    this.fromerror = false;
+    //errors step 2
+    this.passengerserror = false;
+    this.lgluggageerror = false;
+    this.smluggageerror = false;
+    //errors step 3
+    this.fullnameerror = false;
+    this.phoneerror = false;
+    this.emailerror = false;
+  }
   //ir al paso dos
   showStepTwo() {
-    (document.getElementById('stepZero') as HTMLElement).className = "d-none";
-    (document.getElementById('stepThree') as HTMLElement).className = "d-none";
-    (document.getElementById('stepTwo') as HTMLElement).className = "row mb-3";
-    (document.getElementById('stepOne') as HTMLElement).className = "d-none";
-    (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+    this.resetErrors();
+    if(this.currentBooking.date != '') { //if date isnt empty
+      if(this.currentBooking.time != '') { //if time isnt empty
+        if(this.currentBooking.from != '') { //if pickup location isnt empty
+          if(this.currentBooking.destination != '') { //if destination isn't empty
+            (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+            (document.getElementById('stepThree') as HTMLElement).className = "d-none";
+            (document.getElementById('stepTwo') as HTMLElement).className = "row mb-3";
+            (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+            (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+          } else {
+            this.destinationerror = true;
+          }
+        } else {
+          this.fromerror = true;
+        }
+      } else {
+        this.timeerror = true;
+      }
+    } else {
+      this.dateerror = true;
+    }
+    // (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepThree') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepTwo') as HTMLElement).className = "row mb-3";
+    // (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+    // (document.getElementById('congratulations') as HTMLElement).className = "d-none";
   }
   //ir al paso tres
   showStepThree() {
-    (document.getElementById('stepZero') as HTMLElement).className = "d-none";
-    (document.getElementById('stepOne') as HTMLElement).className = "d-none";
-    (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
-    (document.getElementById('stepThree') as HTMLElement).className = "row mb-3";
-    (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+    this.resetErrors();
+    if(this.currentBooking.passengers != '') {
+      if(this.currentBooking.lgluggage != ''){
+        if(this.currentBooking.smluggage != '') {
+          (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+          (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+          (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
+          (document.getElementById('stepThree') as HTMLElement).className = "row mb-3";
+          (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+        } else {
+          this.smluggageerror = true;
+          this.currentBooking.smluggage = '';
+        }
+      } else {
+        this.lgluggageerror = true;
+        this.currentBooking.lgluggage = '';
+      }
+    } else {
+      this.passengerserror = true;
+      this.currentBooking.passengers = '';
+    }
+    // (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepThree') as HTMLElement).className = "row mb-3";
+    // (document.getElementById('congratulations') as HTMLElement).className = "d-none";
   }
   //muestra review final
   review() {
-    (document.getElementById('stepZero') as HTMLElement).className = "d-none";
-    (document.getElementById('stepOne') as HTMLElement).className = "d-none";
-    (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
-    (document.getElementById('stepThree') as HTMLElement).className = "d-none";
-    (document.getElementById('review') as HTMLElement).className = "row mb-3";
-    (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+    this.resetErrors();
+    if(this.currentBooking.fullname != '') {
+      if(this.currentBooking.phone != '') {
+        if(this.currentBooking.email != '') {
+          (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+          (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+          (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
+          (document.getElementById('stepThree') as HTMLElement).className = "d-none";
+          (document.getElementById('review') as HTMLElement).className = "row mb-3";
+          (document.getElementById('congratulations') as HTMLElement).className = "d-none";
+        } else {
+          this.emailerror = true;
+        }
+      } else {
+        this.phoneerror = true;
+      }
+    } else {
+      this.fullnameerror = true;
+    }
+    // (document.getElementById('stepZero') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepOne') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepTwo') as HTMLElement).className = "d-none";
+    // (document.getElementById('stepThree') as HTMLElement).className = "d-none";
+    // (document.getElementById('review') as HTMLElement).className = "row mb-3";
+    // (document.getElementById('congratulations') as HTMLElement).className = "d-none";
   }
   //muestra el textarea de detalles adicionales
   addDetails(){
@@ -278,11 +432,9 @@ export class HomeComponent implements OnInit {
     if(this.english) {
       this.english = false;
       this.spanish = true;
-      this.currentLang = 'español';
     } else {
       this.english = true;
       this.spanish = false;
-      this.currentLang = 'English';
     }
   }
 }

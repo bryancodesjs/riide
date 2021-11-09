@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="bookingForm()">Book a Ride</a>
+            <a class="nav-link" href="#" (click)="bookingForm()">{{currentlang.nav1}}</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">My Rides</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="about()">About Us</a>
+            <a class="nav-link" href="#" (click)="about()">{{currentlang.nav2}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">{{currentlang.nav3}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="admin">Admin</a>
@@ -27,11 +27,11 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="ri-global-line --mr"></i>
-              <span id="langtext">{{currentLang}}</span>
+              <span id="langtext">{{currentlang.name}}</span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#" (click)="switchLang()">English</a></li>
-              <li><a class="dropdown-item" href="#" (click)="switchLang()">Español</a></li>
+              <li><a class="dropdown-item" href="#" (click)="translate()">English</a></li>
+              <li><a class="dropdown-item" href="#" (click)="translate()">Español</a></li>
             </ul>
           </li>
         </ul>
@@ -44,9 +44,9 @@
         <header class="">
             <div class="container">
                 <div class="pt-5 pb-5 d-center">
-                    <h1 class="text-center --shadow"><strong>Go anywhere in the Dominican Republic</strong></h1>
-                    <h4 class="--shadow">Safe and reliable private transportation. Available 24/7</h4>
-                    <button class="btn btn-lg --bg-primary mt-3" (click)="bookingForm()">Book a Riide</button>
+                    <h1 class="text-center --shadow --cap"><strong>{{currentlang.headertitle}}</strong></h1>
+                    <h4 class="--shadow --cap">{{currentlang.headersubtitle}}</h4>
+                    <button class="btn btn-lg --bg-primary mt-3" (click)="bookingForm()">{{currentlang.headerbuttontext}}</button>
                 </div>
             </div>
         </header>
@@ -60,22 +60,22 @@
                         <div class="col-lg-4">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <h1><i class="ri-roadster-fill --primary"></i></h1>
-                                <h4>Door-to-Door Transportation</h4>
-                                <p>We take you anywhere you want in the DR</p>
+                                <h4>{{currentlang.featureOnetitle}}</h4>
+                                <p>{{currentlang.featureOnetext}}</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <h1><i class="ri-flight-land-line --primary"></i></h1>
-                                <h4>Riide From and To all Airports</h4>
-                                <p>Timely express ride from and to all airports</p>
+                                <h4>{{currentlang.featureTwotitle}}</h4>
+                                <p>{{currentlang.featureTwotext}}</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <h1><i class="ri-map-2-fill --primary"></i></h1>
-                                <h4>Visit Our Best Destinations</h4>
-                                <p>Enjoy the beaches, mountainviews and hotels</p>
+                                <h4>{{currentlang.featureThreetitle}}</h4>
+                                <p>{{currentlang.featureThreetext}}</p>
                             </div>
                         </div>
                     </div>
@@ -89,9 +89,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="p-3 d-flex flex-column justify-content-center h-100">
-                        <p class="--text-muted"><strong>GO ANYWHERE</strong></p>
-                        <h2><strong>Door To Door Transportation</strong></h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                        <p class="--text-muted"><strong>{{currentlang.featureOnetag}}</strong></p>
+                        <h2><strong>{{currentlang.featureOnetitle}}</strong></h2>
+                        <p>{{currentlang.featureOnepara}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -105,9 +105,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="p-3 d-flex flex-column justify-content-center h-100">
-                        <p class="--text-muted"><strong>YOUR TRAVEL PARTNER</strong></p>
-                        <h2><strong>Riide From and To all Airports</strong></h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                        <p class="--text-muted"><strong>{{currentlang.featureTwotag}}</strong></p>
+                        <h2><strong>{{currentlang.featureTwotitle}}</strong></h2>
+                        <p>{{currentlang.featureTwopara}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -121,9 +121,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="p-3 d-flex flex-column justify-content-center h-100">
-                        <p class="--text-muted"><strong>WE TAKE YOU THERE</strong></p>
-                        <h2><strong>Visit Our Best Destinations</strong></h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.</p>
+                        <p class="--text-muted"><strong>{{currentlang.featureThreetag}}</strong></p>
+                        <h2><strong>{{currentlang.featureThreetitle}}</strong></h2>
+                        <p>{{currentlang.featureThreepara}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -139,17 +139,17 @@
     <!-- cta -->
     <div class="container-fluid --bg-primary" >
         <div class="container pt-5 pb-5 text-center">
-            <h1><strong>Travel Safe</strong>
+            <h1><strong>{{currentlang.gpstitle}}</strong>
             </h1>
-            <h3>GPS-monitored fleet 24/7</h3>
+            <h3>{{currentlang.gpssub}}</h3>
         </div>
     </div>
     <!-- fleet -->
     <div class="container-fluid --bg--grey" >
         <div class="container pt-5 pb-5">
             <div class="">
-                <h1><strong>Riide Fleet</strong></h1>
-                <h3>Ride with Comfort</h3>
+                <h1><strong>{{currentlang.fleettitle}}</strong></h1>
+                <h3>{{currentlang.fleetsub}}</h3>
             </div>
             <div class="grid mt-5">
                 <div class="grid-item --bg-grey border" *ngFor="let i of cars">
@@ -160,14 +160,14 @@
                                 <small class="--cap">{{i.model}}</small>
                             </div>
                             <div class="col-lg-5">
-                                <small>From</small>
+                                <small>{{currentlang.from}}</small>
                                 <h4 class="--primary mb-0">${{i.price}}</h4>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-lg-12">
                                 <h5 class="mb-0 d-flex align-items-center mb-2"><i class="ri-user-3-fill --primary --mr"></i> {{i.seats}}</h5>
-                                <h5 class="mb-0 d-flex align-items-center"><i class="ri-luggage-cart-line --primary --mr"></i> <span>{{i.luggagelarge}} large</span><span>, {{i.luggagesmall}} small</span></h5>
+                                <h5 class="mb-0 d-flex align-items-center"><i class="ri-luggage-cart-line --primary --mr"></i> <span>{{i.luggagelarge}} {{currentlang.large}}</span><span>, {{i.luggagesmall}} {{currentlang.small}}</span></h5>
                             </div>
                         </div>
                     </div>
@@ -183,21 +183,21 @@
     <div class="container-fluid">
         <div class="container pt-5 pb-5">
             <div class="">
-                <h1><strong>Service Rates</strong></h1>
-                <h3>Lorem ipsum dolor sit.</h3>
+                <h1><strong>{{currentlang.ratesTitle}}</strong></h1>
+                <h3>{{currentlang.ratesSub}}</h3>
             </div>
             <section id="rates" class="mt-5">
                 <div class="row --bg-grey border rounded mb-3 p-3" *ngFor="let r of Rates"> <!-- ngfor here -->
                     <div class="col-lg-4 col-sm-4 ">
-                        <label for="">FROM</label>
+                        <label for="" class="--upper">{{currentlang.from}}</label>
                         <p>{{r.from}}</p>
                     </div>
                     <div class="col-lg-4 col-sm-4 ">
-                        <label for="">TO</label>
+                        <label for="" class="--upper">{{currentlang.to}}</label>
                         <p>{{r.to}}</p>
                     </div>
                     <div class="col-lg-4 col-sm-4 col-md-3 col-6 mt-on-mobile">
-                        <label class="hide-on-mobile">EST. COST</label>
+                        <label class="hide-on-mobile --upper">{{currentlang.estcost}}</label>
                         <p class="price --primary">US${{r.basecost}}</p>
                     </div>
                 </div>
@@ -244,10 +244,12 @@
                     <div class="col-lg-6">
                         <label for="">Trip Date</label>
                         <input [(ngModel)]="currentBooking.date" type="date" class="form-control">
+                        <label *ngIf="dateerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Pickup Time</label>
                         <input [(ngModel)]="currentBooking.time" type="time" class="form-control">
+                        <label *ngIf="timeerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-12" *ngIf="airportservice">
                         <label for="">Flight Number</label>
@@ -257,10 +259,12 @@
                     <div class="col-lg-12">
                         <label for="">Service Pickup Location</label>
                         <input [(ngModel)]="currentBooking.from" type="text" class="form-control">
+                        <label *ngIf="fromerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-12">
                         <label for="">Destination</label>
                         <input [(ngModel)]="currentBooking.destination" type="text" class="form-control">
+                        <label *ngIf="destinationerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-12">
                         <a class="mt-3 mb-3" (click)="addSecondDestination()" *ngIf="!secondDestination && !isareturntrip">+ Add another destination</a>
@@ -293,14 +297,17 @@
                     <div class="col-lg-12">
                         <label for="">Passengers</label>
                         <input [(ngModel)]="currentBooking.passengers" type="text" class="form-control">
+                        <label *ngIf="passengerserror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Large Luggage</label>
                         <input [(ngModel)]="currentBooking.lgluggage" type="number" class="form-control">
+                        <label *ngIf="lgluggageerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Small Luggage</label>
                         <input [(ngModel)]="currentBooking.smluggage" type="number" class="form-control">
+                        <label *ngIf="smluggageerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-12 d-flex align-items-center mt-3">
                         <input type="checkbox" class="form-check-input --mr" (click)="specificCar()">
@@ -327,14 +334,17 @@
                     <div class="col-lg-12">
                         <label for="">Your Full Name</label>
                         <input [(ngModel)]="currentBooking.fullname" type="text" class="form-control">
+                        <label *ngIf="fullnameerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Whatsapp / Phone Number</label>
                         <input [(ngModel)]="currentBooking.phone" type="number" class="form-control">
+                        <label *ngIf="phoneerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-6">
                         <label for="">Email</label>
                         <input [(ngModel)]="currentBooking.email" type="email" class="form-control">
+                        <label *ngIf="emailerror" class="text-danger">Field can't be empty</label>
                     </div>
                     <div class="col-lg-12">
                         <input (click)="addDetails()"  type="checkbox" class="form-check-input --mr">
