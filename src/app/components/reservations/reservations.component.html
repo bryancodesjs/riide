@@ -8,12 +8,20 @@
             </ol>
           </nav>
         <div>
-            <h3><span>{{pending}}</span> Reservaciones</h3>
+            <h3>Reservaciones</h3>
         </div>
-        <hr>
+        <div class="row">
+            <div class="col-lg-8">
+                <ul id="reservacionesTabs">
+                    <li [class]="pendientes? 'active' : '' "><i class="ri-time-line --mr"></i> Pendientes</li>
+                    <li><i class="ri-checkbox-circle-line --mr"></i> Completadas</li>
+                    <li><i class="ri-delete-bin-2-line --mr"></i> Eliminadas</li>
+                </ul>
+            </div>
+        </div>
         <div>
-            <ul>
-                <li *ngFor="let r of reservations" class="mt-3 --bg-grey border">
+            <ul id="reservationList">
+                <li *ngFor="let r of reservations" class="mt-3 --bg-grey border" id="tab{{r.key}}" (click)="select(r.key, r.code)">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="p-3">
@@ -69,8 +77,15 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="p-3">
-                                <label>Monto:</label>
-                                <h5><strong>US$0</strong></h5>
+                                <div class="row">
+                                    <label>Monto:</label>
+                                    <div class="col-lg-7">
+                                        <input type="text" class="form-control" placeholder="USD$" [(ngModel)]="r.cost">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <button class="btn --bg-success">Guardar</button>
+                                    </div>
+                                </div>
                                 <span class="badge --bg-danger" *ngIf="r.status == '0' ">Cancelado</span>
                                 <span class="badge --bg-warning" *ngIf="r.status == '1' ">Pendiente</span>
                                 <span class="badge --bg-success" *ngIf="r.status == '2' ">Completado</span>

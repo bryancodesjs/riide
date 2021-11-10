@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit {
 
 
   //language variables
-  english = true;
-  spanish = false;
+  english = false;
+  spanish = true;
   //languageObject
   currentlang: any = {};
   //idioma ingles

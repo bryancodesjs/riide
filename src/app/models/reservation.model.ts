@@ -21,4 +21,5 @@ export class Reservation {
     car?: string; //vehiculo preferido
     driver?: string; //conductor asignado
     status?: string; //estado de la reservacion | 0 = cancelado, 1 = pendiente, 2 = completado
+    cost?: number; //costo de la reservacion | se asigna solo desde backoffice
 }
