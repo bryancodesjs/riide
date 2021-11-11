@@ -86,6 +86,11 @@ ul {
         font-size: 20px !important;
     }
 }
+i {
+    &.large {
+        font-size: 1.95rem !important;
+    }
+}
 .badge {
     &.--bg-success {
         color: #0e522b;
