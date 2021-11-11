@@ -12,22 +12,24 @@ import { AuthService } from 'src/app/services/authentication.service';
 export class ReservationsComponent implements OnInit {
   reservations?: Reservation[];
   title = 'reservations';
-  pending: number = 0;
+  totalnumberofreservations: number = 0;
   //selected
   selected:any = '';
-  selectedReserv = {};
+  selectedReserv: Reservation = {};
   //reservation tabs
   pendientes = true;
   completadas = false;
-  eliminadas = false;
-
+  canceladas = false;
+  //
+  //
+  reservationUpdated = false;
   constructor(private _bookingservice: ReservationService, public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.retrieve();
+    this.retrieve('1');
   }
 
-  retrieve(): void {
+  retrieve(ab: string): void {
     this._bookingservice.getAll().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
@@ -35,29 +37,76 @@ export class ReservationsComponent implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.reservations = data.reverse(); 
-      this.pending = this.reservations.length;
-      // the 'reverse()' function reverts the order in which the array results are shown by default
+      var fam = data.reverse();
+      var filtered = fam.filter(a => a.status == ab);
+      this.reservations = filtered;
+      // this.reservations = data.reverse(); 
+      // this.totalnumberofreservations = this.reservations.length;
     });
+    
   }
-  select(key: any, id: any): void {
-    if(this.selected == null || this.selected == undefined || this.selected == '') {
-      this.selected = key;
-      (document.getElementById('tab'+key)as HTMLElement).className = "mt-3 --bg-grey border active";
+  select(key: any, id: any, obj: any): void {
+    this.reservationUpdated = false;
+    this.selectedReserv = obj;
+    this.toggleEditModal();
+  }
+  toggleEditModal() {
+    if((document.getElementById('modalForEditing')as HTMLElement).className == "modal fade show d-block") {
+      (document.getElementById('modalForEditing')as HTMLElement).className = "modal fade";
+      (document.getElementById('_body')as HTMLElement).className = "";
+      this.selectedReserv = {};
     } else {
-      (document.getElementById('tab'+this.selected)as HTMLElement).className = "mt-3 --bg-grey border";
-      this.selected = key;
-      (document.getElementById('tab'+key)as HTMLElement).className = "mt-3 --bg-grey border active";
+      (document.getElementById('modalForEditing')as HTMLElement).className = "modal fade show d-block";
+      (document.getElementById('_body')as HTMLElement).className = "overflow-hidden";
     }
   }
   resetSelect(): void {
     this.selected = '';
   }
   update(key: any): void {
-    console.log(key);
-    //this._bookingservice.update(key, this.selectedReserv);
+    // console.log(key);
+    // console.log(this.selectedReserv);
+    this._bookingservice.update(key, this.selectedReserv);
+    this.reservationUpdated = true;
   }
   console(){
     console.log(this.reservations);
+  }
+  toggleFilter(filter: string) {
+    switch(filter){
+      case '0':
+        this.retrieve(filter);
+        this.canceladas = true;
+        this.pendientes = false;
+        this.completadas = false;
+        var filt = this.reservations?.filter(a => a.status == filter);
+        this.reservations = filt;
+        break;
+      case '1':
+        this.retrieve(filter);
+        this.canceladas = false;
+        this.pendientes = true;
+        this.completadas = false;
+        var filt = this.reservations?.filter(a => a.status == filter);
+        this.reservations = filt;
+        break;
+      case '2':
+        this.retrieve(filter);
+        this.canceladas = false;
+        this.pendientes = false;
+        this.completadas = true;
+        var filt = this.reservations?.filter(a => a.status == filter);
+        this.reservations = filt;
+        break;
+      default:
+        this.retrieve('1');
+        this.canceladas = false;
+        this.pendientes = true;
+        this.completadas = false;
+        var filt = this.reservations?.filter(a => a.status == '1');
+        this.reservations = filt;
+        break;
+        
+    }
   }
 }

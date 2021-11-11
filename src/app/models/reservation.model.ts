@@ -22,4 +22,5 @@ export class Reservation {
     driver?: string; //conductor asignado
     status?: string; //estado de la reservacion | 0 = cancelado, 1 = pendiente, 2 = completado
     cost?: number; //costo de la reservacion | se asigna solo desde backoffice
+    paymentstatus?: number; //estado del pago | 0 = pendiente, 5 = 50%, 10 = 100%
 }
