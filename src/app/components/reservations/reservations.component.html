@@ -82,7 +82,7 @@
                                         <label>Monto:</label>
                                         <p class="mb-0"><strong>USD${{r.cost}}</strong></p>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6" *ngIf="r.status=='1'">
                                         <button (click)="select(r.key, r.code, r)" class="btn --action-btn --bg-darker-grey"><i class="ri-pencil-line"></i></button>
                                     </div>
                                 </div>
