@@ -15,7 +15,7 @@ export class AdminNavComponent implements OnInit {
 
   signOut() {
     this.authService.signOut();
-    this.Router.navigateByUrl('/login');
+    this.Router.navigateByUrl('login');
   }
 
 }

@@ -16,7 +16,7 @@
             <a class="nav-link" href="#">My Rides</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="#" (click)="about()">{{currentlang.nav2}}</a>
+            <!-- <a class="nav-link" href="#" (click)="about()">{{currentlang.nav2}}</a> -->
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{{currentlang.nav3}}</a>
@@ -211,174 +211,174 @@
 <div class="container-fluid --bg--grey animate__animated animate__fadeIn" *ngIf="isbooking && !isabout">
     <div class="container pt-5 pb-5">
         <div class="">
-            <h5 class="text-muted mb-0">BOOKING</h5>
-            <h1><strong>BOOK A RIDE</strong></h1>
+            <h5 class="text-muted mb-0">{{currentlang.bookingtag}}</h5>
+            <h1><strong>{{currentlang.bookingtitle}}</strong></h1>
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <div id="stepZero" class="row mb-3">
-                    <h3 class="mb-5 mt-5">Please choose a service</h3>
+                    <h3 class="mb-5 mt-5">{{currentlang.bookingmenuheader}}</h3>
                     <div class="col-lg-6 mb-3">
                         <div class="service-card" id="airportcard" (click)="chooseAirport()">
                             <h1><i class="ri-flight-land-line --primary"></i></h1>
-                            <h5>Airport Transportation</h5>
-                            <label for="" class="--text-muted">Ride from and to any airport in the DR</label>
+                            <h5>{{currentlang.airportservice}}</h5>
+                            <label for="" class="--text-muted">{{currentlang.airportdescription}}</label>
                         </div>
                     </div>
                     <div class="col-lg-6 mb-3">
                         <div class="service-card" id="privatecard" (click)="choosePrivate()">
                             <h1><i class="ri-roadster-fill --primary"></i></h1>
-                            <h5>Private Transportation</h5>
-                            <label for="" class="--text-muted">Door-to-door transportation to and from all cities in the country</label>
+                            <h5>{{currentlang.privateservice}}</h5>
+                            <label for="" class="--text-muted">{{currentlang.privatedescription}}</label>
                         </div>
                     </div>
                     
                     <div class="col-lg-12" *ngIf="airportservice || privateservice">
                         <div class="d-flex justify-content-end mt-3 animate__animated animate__fadeIn quick">
-                            <button (click)="showStepOne()" class="btn btn-lg --bg-primary d-flex align-items-center">Date & Time <i class="ri-arrow-right-s-line"></i></button>
+                            <button (click)="showStepOne()" class="btn btn-lg --bg-primary d-flex align-items-center">{{currentlang.datetimebtn}} <i class="ri-arrow-right-s-line"></i></button>
                         </div>
                     </div>
                 </div>
                 <div id="stepOne" class="d-none">
-                    <h3 class="mb-5 mt-5">When are you traveling?</h3>
+                    <h3 class="mb-5 mt-5">{{currentlang.whentravel}}</h3>
                     <div class="col-lg-6">
-                        <label for="">Trip Date</label>
+                        <label for="">{{currentlang.datelabel}}</label>
                         <input [(ngModel)]="currentBooking.date" type="date" class="form-control">
-                        <label *ngIf="dateerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="dateerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-6">
-                        <label for="">Pickup Time</label>
+                        <label for="">{{currentlang.pickuptimelabel}}</label>
                         <input [(ngModel)]="currentBooking.time" type="time" class="form-control">
-                        <label *ngIf="timeerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="timeerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-12" *ngIf="airportservice">
-                        <label for="">Flight Number</label>
+                        <label for="">{{currentlang.flight}}</label>
                         <!-- agregar numero de vuelo al objeto y modelo -->
                         <input  [(ngModel)]="currentBooking.flightnumber" type="text" class="form-control">
                     </div>
                     <div class="col-lg-12">
-                        <label for="">Service Pickup Location</label>
+                        <label for="">{{currentlang.pickuplocation}}</label>
                         <input [(ngModel)]="currentBooking.from" type="text" class="form-control">
-                        <label *ngIf="fromerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="fromerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-12">
-                        <label for="">Destination</label>
+                        <label for="">{{currentlang.destinationlabel}}</label>
                         <input [(ngModel)]="currentBooking.destination" type="text" class="form-control">
-                        <label *ngIf="destinationerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="destinationerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-12">
-                        <a class="mt-3 mb-3" (click)="addSecondDestination()" *ngIf="!secondDestination && !isareturntrip">+ Add another destination</a>
+                        <a class="mt-3 mb-3" (click)="addSecondDestination()" *ngIf="!secondDestination && !isareturntrip">+ {{currentlang.addDestination}}</a>
                     </div>
                     <div class="col-lg-12 d-flex align-items-center mt-3">
                         <input type="checkbox" class="form-check-input --mr" (click)="returnTrip()">
-                        <label class="form-check-label" for="">I will return to pickup location</label>
+                        <label class="form-check-label" for="">{{currentlang.returncheck}}</label>
                     </div>
                     <div class="col-lg-12 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
-                        <label for="">Destination 2</label>
+                        <label for="">{{currentlang.destinationlabel}} (2)</label>
                         <input [(ngModel)]="currentBooking.destinationTwo" type="text" class="form-control">
                     </div>
                     <div class="col-lg-6 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
-                        <label for="">Trip Date</label>
+                        <label for="">{{currentlang.datelabel}} (2)</label>
                         <input [(ngModel)]="currentBooking.dateTwo"  type="date" class="form-control">
                     </div>
                     <div class="col-lg-6 animate__animated animate__fadeInDown quick" *ngIf="secondDestination">
-                        <label for="">Pickup Time</label>
+                        <label for="">{{currentlang.pickuptimelabel}} (2)</label>
                         <input [(ngModel)]="currentBooking.timeTwo" type="time" class="form-control">
                     </div>
                     <div class="col-lg-12">
                         <div class="d-flex justify-content-between mt-3">
-                            <button (click)="showStepZero()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Service Type</button>
-                            <button (click)="showStepTwo()" class="btn btn-lg --bg-primary d-flex align-items-center">Passengers <i class="ri-arrow-right-s-line"></i></button>
+                            <button (click)="showStepZero()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> {{currentlang.servicetype}}</button>
+                            <button (click)="showStepTwo()" class="btn btn-lg --bg-primary d-flex align-items-center">{{currentlang.passengersbtn}} <i class="ri-arrow-right-s-line"></i></button>
                         </div>
                     </div>
                 </div>
                 <div id="stepTwo" class="row mb-3 d-none">
-                    <h3 class="mb-5 mt-5">How many passengers are you?</h3>
+                    <h3 class="mb-5 mt-5">{{currentlang.howmany}}</h3>
                     <div class="col-lg-12">
-                        <label for="">Passengers</label>
+                        <label for="">{{currentlang.passengersbtn}}</label>
                         <input [(ngModel)]="currentBooking.passengers" type="text" class="form-control">
-                        <label *ngIf="passengerserror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="passengerserror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-6">
-                        <label for="">Large Luggage</label>
+                        <label for="">{{currentlang.lgluggage}} (XL)</label>
                         <input [(ngModel)]="currentBooking.lgluggage" type="number" class="form-control">
-                        <label *ngIf="lgluggageerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="lgluggageerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-6">
-                        <label for="">Small Luggage</label>
+                        <label for="">{{currentlang.smluggage}} (SM)</label>
                         <input [(ngModel)]="currentBooking.smluggage" type="number" class="form-control">
-                        <label *ngIf="smluggageerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="smluggageerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-12 d-flex align-items-center mt-3">
                         <input type="checkbox" class="form-check-input --mr" (click)="specificCar()">
-                        <label class="form-check-label" for="">I want an specific vehicle</label>
+                        <label class="form-check-label" for="">{{currentlang.specificcar}}</label>
                     </div>
                     <div class="col-lg-12 mt-3 car-cards pb-3" *ngIf="wantsSpecificCar">
                         <div class="car-mini-card border rounded --mr" *ngFor="let c of cars" (click)="preferedCar(c.model)">
                             <h5 class="mb-0"><strong class="--cap">{{c.make}}</strong></h5>
                             <label for="" class="--cap">{{c.model}}</label>
                             <p class="mb-0"><i class="ri-user-3-fill --primary"></i> <span class="--mr">{{c.seats}} </span></p>
-                            <p><i class="ri-luggage-deposit-fill --primary"></i> <span>{{c.luggagelarge}} Large and </span> <span>{{c.luggagesmall}} small</span></p>
+                            <p><i class="ri-luggage-deposit-fill --primary"></i> <span>{{c.luggagelarge}} XL & </span> <span>{{c.luggagesmall}} SM</span></p>
                             <img [src]=" '../../../assets/cars/' + c.img + '.webp' " alt="">
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="d-flex justify-content-between mt-3">
-                            <button (click)="showStepOne()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Date</button>
-                            <button (click)="showStepThree()" class="btn btn-lg --bg-primary d-flex align-items-center">Contact Information <i class="ri-arrow-right-s-line"></i></button>
+                            <button (click)="showStepOne()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> {{currentlang.datebtn}}</button>
+                            <button (click)="showStepThree()" class="btn btn-lg --bg-primary d-flex align-items-center">{{currentlang.contactbtn}} <i class="ri-arrow-right-s-line"></i></button>
                         </div>
                     </div>
                 </div>
                 <div id="stepThree" class="row mb-3 d-none">
-                    <h3 class="mb-5 mt-5">Contact Information</h3>
+                    <h3 class="mb-5 mt-5">{{currentlang.contactbtn}}</h3>
                     <div class="col-lg-12">
-                        <label for="">Your Full Name</label>
+                        <label for="">{{currentlang.fullname}}</label>
                         <input [(ngModel)]="currentBooking.fullname" type="text" class="form-control">
-                        <label *ngIf="fullnameerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="fullnameerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-6">
-                        <label for="">Whatsapp / Phone Number</label>
+                        <label for="">{{currentlang.phone}}</label>
                         <input [(ngModel)]="currentBooking.phone" type="number" class="form-control">
-                        <label *ngIf="phoneerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="phoneerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-6">
-                        <label for="">Email</label>
+                        <label for="">{{currentlang.email}}</label>
                         <input [(ngModel)]="currentBooking.email" type="email" class="form-control">
-                        <label *ngIf="emailerror" class="text-danger">Field can't be empty</label>
+                        <label *ngIf="emailerror" class="text-danger">{{currentlang.fielderror}}</label>
                     </div>
                     <div class="col-lg-12">
                         <input (click)="addDetails()"  type="checkbox" class="form-check-input --mr">
-                        <label class="form-check-label" for="">Any additional details? </label>
+                        <label class="form-check-label" for="">{{currentlang.addmoredetails}} </label>
                     </div>
                     <div class="col-lg-12" *ngIf="adddetails">
-                        <label for="" class="mt-3">Additional Details</label>
+                        <label for="" class="mt-3">{{currentlang.moredetails}}</label>
                         <textarea [(ngModel)]="currentBooking.details" rows="4" class="form-control"></textarea>
                     </div>
                     <div class="col-lg-12">
                         <div class="d-flex justify-content-between mt-3">
-                            <button (click)="showStepTwo()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Passengers</button>
-                            <button (click)="review()" class="btn btn-lg --bg-primary d-flex align-items-center">Review <i class="ri-arrow-right-s-line"></i></button>
+                            <button (click)="showStepTwo()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> {{currentlang.passengersbtn}}</button>
+                            <button (click)="review()" class="btn btn-lg --bg-primary d-flex align-items-center">{{currentlang.reviewbtn}} <i class="ri-arrow-right-s-line"></i></button>
                         </div>
                     </div>
                 </div>
                 <div id="review" class="row mb-3 d-none">
-                    <h3 class="mb-5 mt-5">Review your reservation</h3>
+                    <h3 class="mb-5 mt-5">{{currentlang.reviewtitle}}</h3>
                     <div class="--bg-grey p-3 rounded border">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Customer</label>
+                                <label for="">{{currentlang.customer}}</label>
                                 <h5><i class="ri-user-3-fill --primary --mr"></i>{{currentBooking.fullname}}</h5>
                                 <h5><i class="ri-phone-fill --primary --mr"></i>{{currentBooking.phone}}</h5>
                                 <h5><i class="ri-mail-line --primary --mr"></i>{{currentBooking.email}}</h5>
                             </div>
                             <div class="col-lg-6">
                                 <div class="row">
-                                    <label for="">Service Type</label>
-                                    <p *ngIf="currentBooking.type == '0' ">Airport Service</p>
-                                    <p *ngIf="currentBooking.type == '1' ">Private Service</p>
+                                    <label for="">{{currentlang.servicetype}}</label>
+                                    <p *ngIf="currentBooking.type == '0' ">{{currentlang.airportservice}}</p>
+                                    <p *ngIf="currentBooking.type == '1' ">{{currentlang.privateservice}}</p>
                                 </div>
                                 <div class="row" *ngIf="airportservice">
-                                    <label for="">Flight #</label>
+                                    <label for="">{{currentlang.flight}}</label>
                                     <p>{{currentBooking.flightnumber}}</p>
                                 </div>
                             </div>
@@ -386,11 +386,11 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Pickup Location</label>
+                                <label for="">{{currentlang.pickuplocation}}</label>
                                 <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.from}}</p>
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Date</label>
+                                <label for="">{{currentlang.datelabel}}</label>
                                 <p class="mb-0"><i class="ri-calendar-check-fill --primary --mr"></i>{{currentBooking.date}}</p>
                                 <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{currentBooking.time}}</p>
                             </div>
@@ -398,18 +398,18 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label for="">Destination</label>
+                                <label for="">{{currentlang.destination}}</label>
                                 <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.destination}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Second Destination</label>
+                                <label for="">{{currentlang.destination}} (2)</label>
                                 <p><i class="ri-map-pin-line --primary --mr"></i>{{currentBooking.destinationTwo}}</p>
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Date</label>
+                                <label for="">{{currentlang.datelabel}} (2)</label>
                                 <p class="mb-0"><i class="ri-calendar-check-fill --primary --mr"></i>{{currentBooking.dateTwo}}</p>
                                 <p class="mb-0"><i class="ri-time-line --primary --mr"></i>{{currentBooking.timeTwo}}</p>
                             </div>
@@ -417,20 +417,20 @@
                         <hr>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Passengers</label>
+                                <label for="">{{currentlang.passengersbtn}}</label>
                                 <p class="mb-0"><i class="ri-user-3-fill --primary --mr"></i>{{currentBooking.passengers}}</p>
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Luggage</label>
-                                <p class="mb-0"><i class="ri-luggage-cart-line --primary --mr"></i>{{currentBooking.lgluggage}} Large</p>
-                                <p class="mb-0"><i class="ri-handbag-line --primary --mr"></i>{{currentBooking.smluggage}} Small</p>
+                                <label for="">{{currentlang.luggage}}</label>
+                                <p class="mb-0"><i class="ri-luggage-cart-line --primary --mr"></i>{{currentBooking.lgluggage}} )XL)</p>
+                                <p class="mb-0"><i class="ri-handbag-line --primary --mr"></i>{{currentBooking.smluggage}} (SM)</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="d-flex justify-content-between mt-3">
-                            <button (click)="showStepThree()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> Contact</button>
-                            <button (click)="book()" class="btn btn-lg --bg-primary d-flex align-items-center">Submit <i class="ri-arrow-right-s-line"></i></button>
+                            <button (click)="showStepThree()" class="btn btn-lg --bg-grey d-flex align-items-center"><i class="ri-arrow-left-s-line"></i> {{currentlang.contactbtn}}</button>
+                            <button (click)="book()" class="btn btn-lg --bg-primary d-flex align-items-center">{{currentlang.submitbtn}} <i class="ri-arrow-right-s-line"></i></button>
                         </div>
                     </div>
                 </div>
@@ -442,12 +442,10 @@
                             </div>
                         </div>
                         <div class="col-lg-10">
-                            <h5>Your reservation has been submitted!</h5>
-                            <p>A team member will reach out to you via email or phone to provide
-                                you with a copy of this reservation, the cost of the service and
-                                indications to proceed with your payment.
+                            <h5>{{currentlang.submitted}}</h5>
+                            <p>{{currentlang.submittedmsj}}
                             </p>
-                            <p class="mt-3">You may now leave this page.</p>
+                            <p class="mt-3">{{currentlang.leavemsj}}</p>
                         </div>
                     </div>
                 </div>
@@ -481,4 +479,32 @@
     </div>
 </div>
 
-<app-footer></app-footer>
+<footer class="container-fluid mt-5">
+    <div class="container">
+             <div class="row pt-5 pb-5">
+                      <div class="col-lg-3">
+                          <img class="mb-3" src="../../../assets/logo/logo-white.webp" alt="" id="logo">
+                          <br>
+                          <small class="text-muted">Riide Travel Services Garle SRL (2021), DR</small>
+                      </div>
+                      <div class="col-lg-3">
+                          <h5>{{currentlang.company}}</h5>
+                          <ul>
+                              <!-- <li><a (click)="about()" class="nav-link">{{currentlang.nav2}}</a></li> -->
+                              <li><a  class="nav-link">{{currentlang.nav3}}</a></li>
+                              <li><a  class="nav-link">Terms and Conditions</a></li>
+                              <li><a  class="nav-link">Privacy Policy</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-lg-3"></div>
+                      <div class="col-lg-3">
+                          <h5>{{currentlang.socialtitle}}</h5>
+                          <ul id="social-icons" class="d-flex">
+                              <li class="--mr"><a (click)="goTo('https://www.instagram.com/riidetravel_rd/')" class="nav-link"><i class="ri-instagram-line"></i></a></li>
+                              <li class="--mr"><a (click)="goTo('https://www.facebook.com/Riide.Travel')" class="nav-link"><i class="ri-facebook-line"></i></a></li>
+                              <li class="--mr"><a (click)="goTo('https://wa.me/18097682748')" class="nav-link"><i class="ri-whatsapp-line"></i></a></li>
+                          </ul>
+                      </div>
+             </div>
+    </div>
+</footer>

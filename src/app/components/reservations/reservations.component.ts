@@ -3,13 +3,18 @@ import { Reservation } from 'src/app/models/reservation.model';
 import { ReservationService } from 'src/app/services/reservation.service';
 import { map } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/authentication.service';
-
+import { DriversService } from 'src/app/services/drivers.service';
+import {Driver} from '../../models/driver.model';
 @Component({
   selector: 'app-reservations',
   templateUrl: './reservations.component.html',
   styleUrls: ['./reservations.component.scss']
 })
 export class ReservationsComponent implements OnInit {
+  //conductores
+  driverList: Driver = {};
+  drivers: any = [];
+  //reservaciones
   reservations?: Reservation[];
   title = 'reservations';
   totalnumberofreservations: number = 0;
@@ -23,12 +28,26 @@ export class ReservationsComponent implements OnInit {
   //
   //
   reservationUpdated = false;
-  constructor(private _bookingservice: ReservationService, public authService: AuthService) { }
+  constructor(
+    private _bookingservice: ReservationService, 
+    public authService: AuthService,
+    public driverService: DriversService
+    ) { }
 
   ngOnInit(): void {
     this.retrieve('1');
+    this.retrieveDrivers();
   }
-
+  //fetches all drivers
+  retrieveDrivers() {
+    this.driverService.getAll().snapshotChanges().pipe(
+      map(changes => changes.map( c =>
+        ({ key: c.payload.key, ...c.payload.val() })))
+    ).subscribe (data => {
+      //console.log(data);
+      this.drivers = data;
+    });
+  }
   retrieve(ab: string): void {
     this._bookingservice.getAll().snapshotChanges().pipe(
       map(changes =>
@@ -70,7 +89,7 @@ export class ReservationsComponent implements OnInit {
     this.reservationUpdated = true;
   }
   console(){
-    console.log(this.reservations);
+    //console.log(this.reservations);
   }
   toggleFilter(filter: string) {
     switch(filter){

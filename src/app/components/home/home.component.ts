@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
     featureThreetitle : "Visit Our Best Destinations",
     featureThreetext : "Enjoy our best beaches, mountainviews and hotels",
     featureThreepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
-    gpstitle : "travel safe",
+    gpstitle : "Travel Safe",
     gpssub : "GPS-monitored fleet 24/7",
     fleettitle:"Riide Fleet",
     fleetsub:"Ride with Comfort",
@@ -75,7 +75,47 @@ export class HomeComponent implements OnInit {
     to: 'To',
     ratesTitle: 'Service Rates',
     ratesSub: 'Lorem ipsum dolor sit.',
-    estcost: 'Est. Cost.'
+    estcost: 'Est. Cost.',
+    company: 'Company',
+    socialtitle: 'Social Media',
+    bookingtag: 'BOOKING',
+    bookingtitle: 'BOOK A RIDE',
+    bookingmenuheader: 'Please choose a service',
+    airportservice: 'Airport Transportation',
+    airportdescription: 'Ride from and to any airport in the DR',
+    privateservice: 'Private Transportation',
+    privatedescription: 'Door-to-door transportation to and from all cities in the country',
+    datetimebtn: 'Date & Time',
+    whentravel: 'When are you traveling?',
+    datelabel: 'Trip Date',
+    pickuptimelabel: 'Pickup Time',
+    pickuplocation: 'Service Pickup Location',
+    destinationlabel: 'Destination',
+    addDestination: 'Add another destination',
+    returncheck: 'I will return to pickup location',
+    servicetype: 'Service Type',
+    passengersbtn: 'Passengers',
+    fielderror: 'This field cannot be empty',
+    flight: 'Flight Number',
+    howmany: 'How many passengers are you?',
+    lgluggage: 'Large Luggage',
+    smluggage: 'Small Luggage',
+    specificcar: 'I want an specific vehicule',
+    datebtn: 'Date',
+    contactbtn: 'Contact Information',
+    fullname: 'Your Full Name',
+    phone: 'Whatsapp / Phone Number',
+    email: 'Email',
+    addmoredetails: 'Any additional details?',
+    moredetails: 'Additional Details',
+    reviewbtn: 'Review',
+    reviewtitle: 'Review your Reservation',
+    customer: 'Customer',
+    submitbtn: 'Submit',
+    submitted: 'Your reservation has been submitted!',
+    submittedmsj: 'A team member will reach out to you via email or phone to provide you with a copy of this reservation, the cost of the service and indications to proceed with your payment.',
+    leavemsj: 'You may now leave this page.',
+    luggage: 'Luggage'
   }
 
   langEs = 
@@ -102,14 +142,54 @@ export class HomeComponent implements OnInit {
     gpstitle : "Viaja Seguro",
     gpssub : "Flotilla Monitoreada por GPS 24/7",
     fleettitle:"Nuestra Florilla",
-    fleetsub:"Viaja Confortable",
+    fleetsub:"Viaja con Comodidad",
     large:"Gde.",
     small:"Peq.",
     from:"Desde",
     to:"Hacia",
     ratesTitle: 'Tarifas de Servicio',
     ratesSub: 'Lorem ipsum dolor sit.',
-    estcost: 'Costo Aprox.'
+    estcost: 'Costo Aprox.',
+    company: 'Compañia',
+    socialtitle: 'Redes Sociales',
+    bookingtag: 'RESERVAS',
+    bookingtitle: 'Reserve su Viaje',
+    bookingmenuheader: 'Elija un Servicio',
+    airportservice: 'Transporte desde Aeropuerto',
+    airportdescription: 'Viaje desde y hacia cualquier aeropuerto',
+    privateservice: 'Transporte Privado',
+    privatedescription: 'Viaje puerta a puerta en todo el pais',
+    datetimebtn: 'Fecha y Hora',
+    whentravel: '¿Cuando vas a viajar?',
+    datelabel: 'Fecha de Reserva',
+    pickuptimelabel: 'Hora de Recogida',
+    pickuplocation: 'Lugar de Recogida',
+    destinationlabel: 'Lugar de Destino',
+    addDestination: 'Agregar destino adicional',
+    returncheck: 'Voy a retornar al punto de recogida',
+    servicetype: 'Tipo de Servicio',
+    passengersbtn: 'Pasajeros',
+    fielderror: 'Este campo no puede estar vacío',
+    flight: 'Numero de Vuelo',
+    howmany: '¿Cuantos pasajeros van en el viaje?',
+    lgluggage: 'Maletas Grandes',
+    smluggage: 'Maletas Pequeñas',
+    specificcar: 'Quiero un vehiculo específico',
+    datebtn: 'Fecha',
+    contactbtn: 'Informacion de Contacto',
+    fullname: 'Nombre Completo',
+    phone: 'Whatsapp / Telefono',
+    email: 'Correo Electrónico',
+    addmoredetails: 'Agregar detalles adicionales',
+    moredetails: 'Detalles Adicionales',
+    reviewbtn: 'Revisar',
+    reviewtitle: 'Revisar su Reservación',
+    customer: 'Cliente',
+    submitbtn: 'Enviar',
+    submitted: 'Su reservación ha sido enviada!',
+    submittedmsj: 'Un miembro del equipo se pondrá en contacto con usted por correo electrónico o por teléfono para facilitarle una copia de esta reserva, el coste del servicio y las indicaciones para proceder al pago.',
+    leavemsj: 'Ya puede cerrar esta ventana.',
+    luggage: 'Equipaje'
   }
 
   translate(){
@@ -161,7 +241,7 @@ export class HomeComponent implements OnInit {
     make: 'hyundai',
     model:'elantra',
     price: '26',
-    seats: '3',
+    seats: '2',
     luggagelarge: '1',
     luggagesmall: '3',
     img: 'elantra'
@@ -176,22 +256,22 @@ export class HomeComponent implements OnInit {
     img: 'town-and-country'
   },
   {
-    make: 'toyota',
-    model:'corolla',
+    make: 'ford',
+    model:'focus',
     price: '26',
-    seats: '3',
+    seats: '2',
     luggagelarge: '1',
     luggagesmall: '3',
-    img: 'corolla'
+    img: 'focus'
   },
   {
     make: 'hyundai',
-    model:'h1',
+    model:'tucson',
     price: '50',
-    seats: '7',
-    luggagelarge: '4',
-    luggagesmall: '5',
-    img: 'h1'
+    seats: '3',
+    luggagelarge: '2',
+    luggagesmall: '1',
+    img: 'tucson'
   },
   ]
   //car collection on the booking form
@@ -436,5 +516,8 @@ export class HomeComponent implements OnInit {
       this.english = true;
       this.spanish = false;
     }
+  }
+  goTo(url: string) {
+    window.open(url, "_blank");
   }
 }

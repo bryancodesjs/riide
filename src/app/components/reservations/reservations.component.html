@@ -6,7 +6,7 @@
               <li class="breadcrumb-item"><a routerLink="/admin">Admin</a></li>
               <li class="breadcrumb-item active --cap" aria-current="page">{{title}}</li>
             </ol>
-          </nav>
+        </nav>
         <div>
             <h3>Reservaciones</h3>
         </div>
@@ -136,8 +136,7 @@
                   <label for="">Conductor</label>
                   <select name="" id="" class="form-control" [(ngModel)]="selectedReserv.driver">
                       <option value="">N/A</option>
-                      <option value="alan d. garcia">Alan D. Garcia</option>
-                      <option value="bryan campos">Bryan Campos</option>
+                      <option *ngFor="let d of drivers" value="{{d.fullname}}">{{d.fullname}}</option>
                   </select>
               </div>
               <div class="form-group">

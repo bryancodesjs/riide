@@ -123,3 +123,22 @@ header {
         font-weight: 500;
     }
 }
+footer {
+    background-color: #22262a;
+    color: #f8f8fa;
+    #logo {
+        width: 100px;
+    }
+    a.nav-link {
+        color:#848484;
+        padding: 0.25rem 0rem;
+        &:hover {
+            color: #7f51f9;
+        }
+    }
+    #social-icons {
+        a {
+            font-size: 1.8rem;
+        }
+    }
+}

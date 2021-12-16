@@ -20,6 +20,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { RatesComponent } from './components/rates/rates.component';
+import { DriversComponent } from './components/drivers/drivers.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RatesComponent } from './components/rates/rates.component';
     ContactComponent,
     AboutComponent,
     AdminNavComponent,
-    RatesComponent
+    RatesComponent,
+    DriversComponent
   ],
   imports: [
     BrowserModule,
