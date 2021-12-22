@@ -38,6 +38,7 @@
       </div>
     </div>
 </nav>
+<!-- LANDING CONTENT -->
 <div class="animate__animated animate__fadeIn" *ngIf="!isbooking && !isabout">
     <!-- header -->
     <div id="main" class="container-fluid " >
@@ -56,17 +57,20 @@
         <div class="container">
             <section id="features" class="">
                 <div class="container p-5">
+                    <div class="row d-flex justify-content-center">
+                        <h3 class="text-center mb-5">{{currentlang.ourservices}}</h3>
+                    </div>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <h1><i class="ri-roadster-fill --primary"></i></h1>
+                                <h1><i class="ri-flight-land-line --primary"></i></h1>
                                 <h4>{{currentlang.featureOnetitle}}</h4>
                                 <p>{{currentlang.featureOnetext}}</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <h1><i class="ri-flight-land-line --primary"></i></h1>
+                                <h1><i class="ri-flight-takeoff-line --primary"></i></h1>
                                 <h4>{{currentlang.featureTwotitle}}</h4>
                                 <p>{{currentlang.featureTwotext}}</p>
                             </div>
@@ -180,14 +184,14 @@
 
     </div>
     <!-- rates-->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="container pt-5 pb-5">
             <div class="">
                 <h1><strong>{{currentlang.ratesTitle}}</strong></h1>
                 <h3>{{currentlang.ratesSub}}</h3>
             </div>
             <section id="rates" class="mt-5">
-                <div class="row --bg-grey border rounded mb-3 p-3" *ngFor="let r of Rates"> <!-- ngfor here -->
+                <div class="row --bg-grey border rounded mb-3 p-3" *ngFor="let r of Rates">
                     <div class="col-lg-4 col-sm-4 ">
                         <label for="" class="--upper">{{currentlang.from}}</label>
                         <p>{{r.from}}</p>
@@ -204,7 +208,7 @@
                 
             </section>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- book a ride -->

@@ -39,8 +39,8 @@ export class HomeComponent implements OnInit {
 
 
   //language variables
-  english = false;
-  spanish = true;
+  english = true;
+  spanish = false;
   //languageObject
   currentlang: any = {};
   //idioma ingles
@@ -54,16 +54,16 @@ export class HomeComponent implements OnInit {
     headersubtitle : "Safe and reliable transportation. Available 24/7",
     headerbuttontext : "Book a Ride",
     featureOnetag : "go anywhere",
-    featureOnetitle : "Door-to-Door Transportation",
-    featureOnetext: "We take you anywhere you want in the DR",
+    featureOnetitle : "Airport Pickup",
+    featureOnetext: "We wait for you at any airport in the DR",
     featureOnepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
-    featureTwotag : "your travel partner",
-    featureTwotitle : "Riide From and To all Airports",
-    featureTwotext : "Timely express ride from and to all airports",
+    featureTwotag : "Ride to any airport",
+    featureTwotitle : "We take you to any airport in the DR 24/7",
+    featureTwotext : "Timely express ride to all airports",
     featureTwopara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
-    featureThreetag : "we take you there",
-    featureThreetitle : "Visit Our Best Destinations",
-    featureThreetext : "Enjoy our best beaches, mountainviews and hotels",
+    featureThreetag : "Door-to-door",
+    featureThreetitle : "You choose a destination and we take you there",
+    featureThreetext : "For business, leisure or express commutes accross any city",
     featureThreepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
     gpstitle : "Travel Safe",
     gpssub : "GPS-monitored fleet 24/7",
@@ -115,7 +115,8 @@ export class HomeComponent implements OnInit {
     submitted: 'Your reservation has been submitted!',
     submittedmsj: 'A team member will reach out to you via email or phone to provide you with a copy of this reservation, the cost of the service and indications to proceed with your payment.',
     leavemsj: 'You may now leave this page.',
-    luggage: 'Luggage'
+    luggage: 'Luggage',
+    ourservices: 'Our Services'
   }
 
   langEs = 
@@ -127,17 +128,17 @@ export class HomeComponent implements OnInit {
     headertitle: "Ve a cualquier parte en Republica Dominicana",
     headersubtitle : "Transporte puntual y seguro las 24 horas",
     headerbuttontext : "Reservar un Servicio",
-    featureOnetag : "Ve a cualquier lado",
-    featureOnetitle : "Transporte Puerta a Puerta",
-    featureOnetext: "Te llevamos a cualquier punto de la isla",
+    featureOnetag : "Servicio de Recogida",
+    featureOnetitle : "Transporte desde el aeropuerto",
+    featureOnetext: "Esperamos por ti en cualquier aeropuerto del país",
     featureOnepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
-    featureTwotag : "Tu compañero de viajes",
-    featureTwotitle : "Transporte desde y hacia todos los aeropuertos",
-    featureTwotext : "Llegamos a tiempo y esperamos por ti en y hacia todos los aeropuertos",
+    featureTwotag : "Transporte hacia el aeropuerto",
+    featureTwotitle : "Te llevamos a cualquier aeropuerto 24/7",
+    featureTwotext : "Viaje comodo y expreso a cualquier aeropuerto",
     featureTwopara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
-    featureThreetag : "Conoce",
-    featureThreetitle : "Visita los mejores destinos",
-    featureThreetext : "Disfruta de nuestras mejores playas, vistas y hoteles",
+    featureThreetag : "Transporte puerta a puerta",
+    featureThreetitle : "Tu eliges el destino y te llevamos puerta a puerta",
+    featureThreetext : "Para viajes de negocios, vacaciones y movimientos expresos en la ciudad",
     featureThreepara : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta animi vel placeat nulla.",
     gpstitle : "Viaja Seguro",
     gpssub : "Flotilla Monitoreada por GPS 24/7",
@@ -189,7 +190,8 @@ export class HomeComponent implements OnInit {
     submitted: 'Su reservación ha sido enviada!',
     submittedmsj: 'Un miembro del equipo se pondrá en contacto con usted por correo electrónico o por teléfono para facilitarle una copia de esta reserva, el coste del servicio y las indicaciones para proceder al pago.',
     leavemsj: 'Ya puede cerrar esta ventana.',
-    luggage: 'Equipaje'
+    luggage: 'Equipaje',
+    ourservices: 'Nuestros Servicios'
   }
 
   translate(){
@@ -240,7 +242,7 @@ export class HomeComponent implements OnInit {
   {
     make: 'hyundai',
     model:'elantra',
-    price: '26',
+    price: '35',
     seats: '2',
     luggagelarge: '1',
     luggagesmall: '3',
@@ -249,7 +251,7 @@ export class HomeComponent implements OnInit {
   {
     make: 'chrysler',
     model:'town and country',
-    price: '45',
+    price: '50',
     seats: '5',
     luggagelarge: '3',
     luggagesmall: '5',
@@ -258,7 +260,7 @@ export class HomeComponent implements OnInit {
   {
     make: 'ford',
     model:'focus',
-    price: '26',
+    price: '35',
     seats: '2',
     luggagelarge: '1',
     luggagesmall: '3',
